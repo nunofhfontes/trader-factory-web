@@ -1,7 +1,10 @@
 import axios from 'axios';
 
+
 import * as actionTypes from './actionTypes';
 
+//set a loading state
+//and show a spinner
 export const authStart = () => {
     return {
         type: actionTypes.AUTH_START
@@ -92,3 +95,5 @@ export const authCheckState = () => {
         }
     };
 };
+
+

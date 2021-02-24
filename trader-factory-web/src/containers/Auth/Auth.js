@@ -1,3 +1,9 @@
+import React, { Component } from 'react';
+import { connect } from 'react-redux';
+import { Redirect } from 'react-router-dom';
+
+import Spinner from '../../components/UI/Spinner/Spinner';
+import * as actions from '../../store/actions/index';
 
 
 class Auth extends Component {
@@ -74,3 +80,11 @@ class Auth extends Component {
         );
     }
 }
+
+const mapDispatchToProps = dispatch => {
+    return {
+        onAuth: (email, password) => dispatch(actionTypes.auth(email, password))
+    }
+}
+
+export default connect(null, mapDispatchToProps)(Auth);
