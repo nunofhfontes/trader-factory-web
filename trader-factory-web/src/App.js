@@ -7,6 +7,8 @@ import {
 } from "react-router-dom";
 // import logo from './logo.svg';
 import './App.css';
+import Navbar from "./components/Navigation/Navbar/Navbar";
+import Portfolio from "./containers/Portfolio/Portfolio";
 
 import * as actions from './store/actions/index';
 
@@ -31,31 +33,22 @@ function App() {
 
     <Router>
       <div>
-        <nav>
-          <ul>
-            <li>
-              <Link to="/">Home</Link>
-            </li>
-            <li>
-              <Link to="/portfolio">Portfolio</Link>
-            </li>
-            <li>
-              <Link to="/account">Account</Link>
-            </li>
-          </ul>
-        </nav>
-
-        {/* A <Switch> looks through its children <Route>s and
-            renders the first one that matches the current URL. */}
+        <Navbar />
         <Switch>
+          <Route path="/dashboard">
+            <Dashboard />
+          </Route>
           <Route path="/portfolio">
             <Portfolio />
           </Route>
           <Route path="/account">
             <Account />
           </Route>
-          <Route path="/">
-            <Home />
+          <Route path="/fundamentals">
+            <Fundamentals />
+          </Route>
+          <Route path="/techanalysis">
+            <TechAnalysis />
           </Route>
         </Switch>
       </div>
@@ -64,16 +57,22 @@ function App() {
   );
 }
 
-function Home() {
-  return <h2>Home</h2>;
-}
 
-function Portfolio() {
-  return <h2>Portfolio</h2>;
+
+function Dashboard() {
+  return <h2>Dashboard</h2>;
 }
 
 function Account() {
   return <h2>Account</h2>;
+}
+
+function Fundamentals() {
+  return <h2>Fundamentals</h2>;
+}
+
+function TechAnalysis() {
+  return <h2>Technical Analysis</h2>;
 }
 
 export default App;
