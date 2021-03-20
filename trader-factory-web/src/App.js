@@ -3,8 +3,10 @@ import {
   BrowserRouter as Router,
   Switch,
   Route,
-  Link
+  Link,
+  withRouter
 } from "react-router-dom";
+import { connect } from 'react-redux';
 // import logo from './logo.svg';
 import './App.css';
 import Navbar from "./components/Navigation/Navbar/Navbar";
@@ -75,4 +77,17 @@ function TechAnalysis() {
   return <h2>Technical Analysis</h2>;
 }
 
-export default App;
+// export default App;
+const mapStateToProps = state => {
+  return {
+    isAuthenticated: state.auth.token !== null
+  };
+};
+
+const mapDispatchToProps = dispatch => {
+  return {
+    onTryAutoSignup: () => dispatch( actions.authCheckState() )
+  };
+};
+
+export default withRouter( connect( mapStateToProps, mapDispatchToProps )( App ) );
