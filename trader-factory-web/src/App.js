@@ -11,6 +11,7 @@ import { connect } from 'react-redux';
 import './App.css';
 import Navbar from "./components/Navigation/Navbar/Navbar";
 import Portfolio from "./containers/Portfolio/Portfolio";
+import Dashboard from "./containers/Dashboard/Dashboard"
 
 import * as actions from './store/actions/index';
 
@@ -61,9 +62,8 @@ function App() {
 
 
 
-function Dashboard() {
-  return <h2>Dashboard</h2>;
-}
+
+
 
 function Account() {
   return <h2>Account</h2>;
