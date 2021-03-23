@@ -339,3 +339,4 @@ node_modules/react/cjs/react-jsx-runtime.profiling.min.js
 node_modules/react/umd/react.development.js
 node_modules/react/umd/react.production.min.js
 node_modules/react/umd/react.profiling.min.js
+node_modules/
