@@ -11,7 +11,8 @@ import { connect } from 'react-redux';
 import './App.css';
 import Navbar from "./components/Navigation/Navbar/Navbar";
 import Portfolio from "./containers/Portfolio/Portfolio";
-import Dashboard from "./containers/Dashboard/Dashboard"
+import Dashboard from "./containers/Dashboard/Dashboard";
+import Fundamentals from "./containers/Fundamentals/Fundamentals";
 
 import * as actions from './store/actions/index';
 
@@ -60,17 +61,8 @@ function App() {
   );
 }
 
-
-
-
-
-
 function Account() {
   return <h2>Account</h2>;
-}
-
-function Fundamentals() {
-  return <h2>Fundamentals</h2>;
 }
 
 function TechAnalysis() {
