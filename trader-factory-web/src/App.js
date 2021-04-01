@@ -13,8 +13,10 @@ import Navbar from "./components/Navigation/Navbar/Navbar";
 import Portfolio from "./containers/Portfolio/Portfolio";
 import Dashboard from "./containers/Dashboard/Dashboard";
 import Fundamentals from "./containers/Fundamentals/Fundamentals";
+import Auth from "./containers/Auth/Auth";
 
 import * as actions from './store/actions/index';
+
 
 function App() {
   return (
@@ -39,6 +41,9 @@ function App() {
       <div>
         <Navbar />
         <Switch>
+          <Route path="/login">
+            <Auth />
+          </Route>
           <Route path="/dashboard">
             <Dashboard />
           </Route>
@@ -57,6 +62,19 @@ function App() {
         </Switch>
       </div>
     </Router>
+
+    /* <Switch>
+      <!-- PUBLIC ROUTE -->
+      <PublicRoute restricted={true} component={Login} path="/" exact />
+
+      <!-- PRIVATE ROUTE -->
+      <PrivateRoute component={Home} path="/home" exact />
+      <PrivateRoute component={PageOne} path="/page-1" exact />
+      <PrivateRoute component={PageTwo} path="/page-2" exact />
+      <PrivateRoute component={NoMatch} path="*" />
+      <PublicRoute component={NoMatch} path="*" />
+    </Switch> */
+    /* <PrivateRoute component={Home} path="/home" exact /> */
 
   );
 }
