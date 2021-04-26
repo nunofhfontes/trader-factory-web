@@ -1,10 +1,10 @@
 import React from 'react';
 import { Route, Redirect } from 'react-router-dom';
-import { isLogin } from '../middleware/auth';
+// import { isLogin } from '../middleware/auth';
 
 const PrivateRoute = ({ component: Component, ...rest }) => (
     // Show the component only when the user is logged in
     // Otherwise, redirect the user to /signin page
-    <Route {...rest} render={props => (isLoginIn() ? <Component {...props} /> : <Redirect to="/" />)} />
+    <Route {...rest} render={props => (rest.isLoginIn() ? <Component {...props} /> : <Redirect to="/" />)} />
 )
 export default PrivateRoute;
